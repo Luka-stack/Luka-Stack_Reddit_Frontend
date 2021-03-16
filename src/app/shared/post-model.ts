@@ -4,8 +4,10 @@ export class PostModel {
     url!: string;
     description!: string;
     voteCount!: number;
-    userName!: string;
-    subbredditName!: string;
+    username!: string;
+    subRedditName!: string;
     commentCount!: number;
-    duratoin!: string;
+    duration!: string;
+    upVote!: boolean;
+    downVote!: boolean;
 }

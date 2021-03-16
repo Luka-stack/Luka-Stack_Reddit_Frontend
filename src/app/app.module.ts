@@ -12,6 +12,19 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
 import { ToastrModule } from 'ngx-toastr';
 import { TokenInterceptor } from './token-interceptor';
 import { HomeComponent } from './home/home.component';
+import { PostTileComponent } from './shared/post-tile/post-tile.component';
+import { SideBarComponent } from './shared/side-bar/side-bar.component';
+import { SubredditSideBarComponent } from './shared/subreddit-side-bar/subreddit-side-bar.component';
+import { VotebuttonComponent } from './shared/votebutton/votebutton.component';
+import { CreateSubredditComponent } from './subreddit/create-subreddit/create-subreddit.component';
+import { CreatePostComponent } from './post/create-post/create-post.component';
+import { ListSubredditsComponent } from './subreddit/list-subreddits/list-subreddits.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ViewPostComponent } from './post/view-post/view-post.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UserProfileComponent } from './auth/user-profile/user-profile.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,7 +32,16 @@ import { HomeComponent } from './home/home.component';
     HeaderComponent,
     LoginComponent,
     SignUpComponent,
-    HomeComponent
+    HomeComponent,
+    PostTileComponent,
+    SideBarComponent,
+    SubredditSideBarComponent,
+    VotebuttonComponent,
+    CreateSubredditComponent,
+    CreatePostComponent,
+    ListSubredditsComponent,
+    ViewPostComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +49,11 @@ import { HomeComponent } from './home/home.component';
     ReactiveFormsModule,
     HttpClientModule,
     NgxWebstorageModule.forRoot(),
-    ToastrModule.forRoot()
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    FontAwesomeModule,
+    EditorModule,
+    NgbModule
   ],
   providers: [
     {

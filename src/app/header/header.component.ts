@@ -1,4 +1,7 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth/shared/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  isLoggedIn: boolean = false;
+  username?: string;
+
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
+    this.isLoggedIn = this.authService.isLoggedIn();
+    this.username = this.authService.getUsername();
   }
 
+  goToUserProfile() {
+    this.router.navigateByUrl('/user-profile/' + this.username);
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigateByUrl('').then(() => {
+      window.location.reload();
+    });
+  }
 }
